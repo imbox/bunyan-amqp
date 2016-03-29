@@ -1,6 +1,6 @@
 {
   "name": "bunyan-amqp",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "ES6 AMQP transport stream for Bunyan logging library.",
   "main": "index.js",
   "keywords": [
@@ -10,23 +10,20 @@
     "stream",
     "transport"
   ],
-  "contributors": [{
-    "name": "Peter Hanneman",
-    "email": "peter.a.hanneman+github@gmail.com",
-    "url": "https://github.com/timelessvirtues"
-  }],
+  "contributors": [
+    {
+      "name": "Peter Hanneman",
+      "email": "peter.a.hanneman+github@gmail.com",
+      "url": "https://github.com/timelessvirtues"
+    },
+    {
+      "name": "Mathias Lundell",
+      "email": "mathias.lundell@imbox.se"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
-    "amqplib": "^0.4.0",
-    "json-stringify-safe": "^5.0.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/timelessvirtues/bunyan-amqp"
-  },
-  "bugs": {
-    "url": "https://github.com/timelessvirtues/bunyan-amqp/issues",
-    "email": "peter.a.hanneman+github@gmail.com"
+    "amqp": "^0.2.4"
   },
   "readmeFilename": "README.md"
 }
