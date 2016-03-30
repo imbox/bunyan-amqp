@@ -3,13 +3,6 @@ let amqp = require('amqp')
 
 class BunyanTransport {
   constructor (options) {
-    let host = options.host
-    let port = options.port
-    let vhost = options.vhost
-    let exchangeName = options.exchange
-    let user = options.user
-    let password = options.password
-
     this.levels = {
       10: 'trace',
       20: 'debug',
@@ -22,17 +15,17 @@ class BunyanTransport {
     let context = this
     this.exchangePromise = new Promise(function (resolve, reject) {
       context.connection = amqp.createConnection({
-        host: host,
-        port: port,
-        login: user,
-        password: password,
-        vhost: vhost
+        host: options.host || '127.0.0.1',
+        port: options.port || 5672,
+        login: options.user,
+        password: options.password
       })
 
       context.connection.once('ready', function () {
-        let opts = {durable: true, exclusive: false}
-        context.connection.exchange(exchangeName, opts, function (exchange) {
-          resolve(exchange)
+        let opts = options.exchange.options || {}
+        let name = options.exchange.name
+        context.connection.exchange(name, opts, function (ex) {
+          resolve(ex)
         })
       })
 

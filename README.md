@@ -23,9 +23,10 @@ var Log = require('bunyan').createLogger({
       stream: require('bunyan-amqp')({
         host: '127.0.0.1',
         port: 5672,
-        vhost: 'logger',
-        exchange: 'exchangeName',
-        queue: 'queueName',
+        exchange: {
+          name: 'exchangeName'
+          options: {durable: true, autoDelete: false}
+        },
         username: 'username',
         password: 'password',
       }),
