@@ -15,6 +15,8 @@ class BunyanTransport {
     let context = this
     this.exchangePromise = new Promise(function (resolve, reject) {
       context.connection = amqp.createConnection({
+        heartbeat: 5,
+        heartbeatForceReconnect: true,
         host: options.host || '127.0.0.1',
         port: options.port || 5672,
         login: options.user,
