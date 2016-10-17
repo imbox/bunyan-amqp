@@ -22,8 +22,8 @@
     }
   ],
   "license": "MIT",
+  "readmeFilename": "README.md",
   "dependencies": {
-    "amqp": "^0.2.6"
-  },
-  "readmeFilename": "README.md"
+    "rabbot": "^1.0.6"
+  }
 }
