@@ -22,7 +22,8 @@ class BunyanTransport {
       host: options.host || '127.0.0.1',
       port: options.port || 5672,
       timeout: 2000,
-      heartbeat: 5
+      heartbeat: 5,
+      replyQueue: false
     })
 
     this.exchangeName = options.exchange.name
