@@ -24,6 +24,6 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "rabbot": "^1.0.6"
+    "rabbot": "imbox/rabbot#305b4ef",
   }
 }
